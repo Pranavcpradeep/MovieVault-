@@ -1,7 +1,7 @@
 [
   {
     "name": "Inception",
-    "poster": "img/inception.jpg",
+    "poster": "img/1.jpg",
     "rating": "8.8",
     "genre1": "Sci-Fi",
     "genre2": "Thriller",
@@ -9,7 +9,7 @@
   },
   {
     "name": "Interstellar",
-    "poster": "img/interstellar.jpg",
+    "poster": "img/3.jpg",
     "rating": "8.6",
     "genre1": "Sci-Fi",
     "genre2": "Drama",
