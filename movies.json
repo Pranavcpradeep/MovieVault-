@@ -1,18 +1,20 @@
 [
-  {
-    "name": "Inception",
-    "poster": "img/1.jpg",
-    "rating": "8.8",
-    "genre1": "Sci-Fi",
-    "genre2": "Thriller",
-    "description": "A mind-bending thriller."
-  },
-  {
-    "name": "Interstellar",
-    "poster": "img/3.jpg",
-    "rating": "8.6",
-    "genre1": "Sci-Fi",
-    "genre2": "Drama",
-    "description": "A journey through space and time."
-  }
+    {
+        "name": "Breaking Bad",
+        "poster": "img/8.jpg",
+        "rating": "9.5",
+        "genre1": "Crime",
+        "genre2": "Drama",
+        "description": "A chemistry teacher diagnosed with inoperable lung cancer...",
+        "year": "2008"
+    },
+    {
+        "name": "Chernobyl",
+        "poster": "img/9.jpg",
+        "rating": "9.4",
+        "genre1": "History",
+        "genre2": "Drama",
+        "description": "In April 1986, the city of Chernobyl in the Soviet Union...",
+        "year": "2019"
+    }
 ]
