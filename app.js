@@ -34,10 +34,39 @@ ball.addEventListener("click", () => {
   ball.classList.toggle("active");
 });
 
-function goToDetails(movieId) {
-  window.location.href = `details.html?id=${movieId}`;
-}
 
 function goToGenre(genre) {
   window.location.href = `genre.html?genre=${genre}`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("movies.json")
+        .then(response => response.json())
+        .then(movies => {
+            let movieContainers = document.querySelectorAll(".movie-list-item");
+            let usedIndexes = new Set();
+
+            movieContainers.forEach((container, index) => {
+                if (movies.length === usedIndexes.size) return; // Stop if all movies are used
+
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * movies.length);
+                } while (usedIndexes.has(randomIndex)); // Ensure no repetition
+
+                usedIndexes.add(randomIndex);
+                let movie = movies[randomIndex];
+
+                container.querySelector(".movie-list-item-img").src = movie.poster;
+                container.querySelector(".movie-list-item-img").alt = movie.name;
+                container.querySelector(".movie-list-item-title").textContent = movie.name;
+                container.querySelector(".movie-list-item-desc").textContent = movie.description;
+                
+                // Ensure the button correctly navigates to details.html with movie name as parameter
+                container.querySelector(".movie-list-item-button").onclick = function () {
+                    window.location.href = `details.html?movie=${encodeURIComponent(movie.name)}`;
+                };
+            });
+        })
+        .catch(error => console.error("Error loading movies:", error));
+});
